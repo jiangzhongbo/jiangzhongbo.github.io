@@ -1,11 +1,11 @@
 	body {
-		background-color: #FFFFFF;
+		background-color: #D4D8D1;
 		font-size: 17px;
-		color: white;
+		color: 67655D;
 	}
 
 	.panel {
-		background-color: rgb(100, 100, 100);
+		background-color: #C1C3BF;
 	}
 
 	.panel-body {
@@ -30,7 +30,7 @@
 	}
 
 	span {
-		color: orange;
+		color: #67655D;
 	}
 
 	.up {
@@ -42,5 +42,5 @@
 	}
 
 	.exchange {
-		color: #42f492;
+		color: #67655D;
 	}
