@@ -5,7 +5,17 @@ $(document).ready(function() {
 		//Format: {SubscriptionId}~{ExchangeName}~{FromSymbol}~{ToSymbol}
 		//Use SubscriptionId 0 for TRADE, 2 for CURRENT and 5 for CURRENTAGG
 		//For aggregate quote updates use CCCAGG as market
-		var subscription = ['5~CCCAGG~BTC~USD', '5~CCCAGG~ETH~USD', '5~CCCAGG~XMR~USD', '5~CCCAGG~EOS~USD'];
+		var subscription = [
+			'5~CCCAGG~BTC~USD', 
+			'5~CCCAGG~ETH~USD', 
+			'5~CCCAGG~XMR~USD', 
+			'5~CCCAGG~BCH~USD',
+			'5~CCCAGG~LTC~USD',
+			'5~CCCAGG~EOS~USD',
+			'5~CCCAGG~XLM~USD',
+			'5~CCCAGG~DASH~USD',
+			'5~CCCAGG~XRP~USD'
+		];
 		socket.emit('SubAdd', { subs: subscription });
 		socket.on("m", function(message) {
 			var messageType = message.substring(0, message.indexOf("~"));
