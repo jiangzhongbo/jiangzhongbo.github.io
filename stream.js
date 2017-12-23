@@ -12,7 +12,7 @@ $(document).ready(function() {
 			'5~CCCAGG~BCH~USD',
 			'5~CCCAGG~LTC~USD',
 			'5~CCCAGG~EOS~USD',
-			'5~CCCAGG~XLM~USD',
+			'5~CCCAGG~USDT~USD',
 			'5~CCCAGG~DASH~USD',
 			'5~CCCAGG~XRP~USD'
 		];
