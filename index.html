@@ -1,225 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
-	<title>虚拟币行情</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Smiler Lee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127794800-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127794800-1');
+    </script>
+
 </head>
-
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">BTC - USD <span class="price" id="PRICE_BTC"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_BTC"></span><span id="CHANGE24HOURPCT_BTC"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_BTC"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_BTC"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_BTC"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_BTC"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_BTC"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_BTC"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_BTC"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_BTC"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_BTC"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_BTC"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_BTC"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_BTC"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">ETH - USD <span class="price" id="PRICE_ETH"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_ETH"></span><span id="CHANGE24HOURPCT_ETH"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_ETH"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_ETH"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_ETH"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_ETH"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_ETH"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_ETH"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_ETH"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_ETH"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_ETH"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_ETH"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_ETH"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_ETH"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">BCH - USD <span class="price" id="PRICE_BCH"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_BCH"></span><span id="CHANGE24HOURPCT_BCH"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_BCH"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_BCH"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_BCH"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_BCH"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_BCH"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_BCH"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_BCH"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_BCH"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_BCH"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_BCH"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_BCH"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_BCH"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">XMR - USD <span class="price" id="PRICE_XMR"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_XMR"></span><span id="CHANGE24HOURPCT_XMR"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_XMR"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_XMR"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_XMR"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_XMR"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_XMR"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_XMR"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_XMR"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_XMR"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_XMR"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_XMR"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_XMR"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_XMR"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">EOS - USD <span class="price" id="PRICE_EOS"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_EOS"></span><span id="CHANGE24HOURPCT_EOS"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_EOS"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_EOS"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_EOS"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_EOS"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_EOS"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_EOS"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_EOS"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_EOS"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_EOS"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_EOS"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_EOS"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_EOS"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">LTC - USD <span class="price" id="PRICE_LTC"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_LTC"></span><span id="CHANGE24HOURPCT_LTC"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_LTC"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_LTC"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_LTC"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_LTC"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_LTC"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_LTC"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_LTC"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_LTC"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_LTC"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_LTC"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_LTC"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_LTC"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">USDT - USD <span class="price" id="PRICE_USDT"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_USDT"></span><span id="CHANGE24HOURPCT_USDT"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_USDT"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_USDT"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_USDT"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_USDT"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_USDT"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_USDT"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_USDT"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_USDT"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_USDT"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_USDT"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_USDT"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_USDT"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">DASH - USD <span class="price" id="PRICE_DASH"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_DASH"></span><span id="CHANGE24HOURPCT_DASH"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_DASH"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_DASH"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_DASH"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_DASH"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_DASH"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_DASH"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_DASH"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_DASH"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_DASH"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_DASH"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_DASH"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_DASH"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 price-boxes">
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2 class="price-display">XRP - USD <span class="price" id="PRICE_XRP"></span></h2>
-							<h5>24h Change: <span id="CHANGE24HOUR_XRP"></span><span id="CHANGE24HOURPCT_XRP"></span><br></h5>
-							<h5>Last Market: <span class="exchange" id="LASTMARKET_XRP"></span> <br></h5>
-							<h5>Trade ID: <span id="LASTTRADEID_XRP"></span><br></h5>
-							<h5>Open Hour: <span id="OPENHOUR_XRP"></span><br></h5>
-							<h5>High Hour: <span id="HIGHHOUR_XRP"></span><br></h5>
-							<h5>Low Hour: <span id="LOWHOUR_XRP"></span><br></h5>
-							<h5>Open Day: <span id="OPEN24HOUR_XRP"></span><br></h5>
-							<h5>High Day: <span id="HIGH24HOUR_XRP"></span><br></h5>
-							<h5>Low Day: <span id="LOW24HOUR_XRP"></span><br></h5>
-							<h5>Last Trade Volume: <span id="LASTVOLUME_XRP"></span><br></h5>
-							<h5>Last Trade Volume To: <span id="LASTVOLUMETO_XRP"></span><br></h5>
-							<h5>24h Volume: <span id="VOLUME24HOUR_XRP"></span><br></h5>
-							<h5>24h VolumeTo: <span id="VOLUME24HOURTO_XRP"></span><br></h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="./ccc-streamer-utilities.js"></script>
-	<script src="./stream.js"></script>
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <h1 id="title">Jiang Zhongbo</h1>
+            <h2 id="quote">Love my code, it's my child.</h2>
+        </header>
+    </div>
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+            <ul id="projects">
+                <li>
+                    <img class="app-icon" src="images/basketball_shoot_3d.webp" alt="Basketball Shoot 3D" />
+                    <div class="app-name">Basketball Shoot 3D</div>
+                    <div class="app-description">
+                        Capture the spotlight and create your own legacy in the best 1v1 real time basketball game! There’s never an off season for basketball in Basketball Shoot! Dribble, shoot, dunk and score! Play with friends. Play with legends!
+                    </div>
+                    <a class="app-google-play" href="https://play.google.com/store/apps/details?id=comz.btc.basketball"><img src="images/google-play-badge.png" alt="Get it on Google Play"/></a>
+                    <a class="app-download" href="files/android/Basketball_Shoot_3D_v1.1.0.apk">Download APK file</a>
+                </li>
+                <li>
+                    <img class="app-icon" src="images/cube_dash.png" alt="Cube Dash 3D" />
+                    <div class="app-name">Cube Dash 3D</div>
+                    <div class="app-description">
+                        Cube Dash combines fast-paced gameplay with a carefully selected soundtrack to create an experience like no other. This game pushes the boundaries of your speed and reaction. The visually stunning 3D effect scene enables you to experience the imaginary world of dangers and miracles.
+                    </div>
+                    <a class="app-google-play" href="https://play.google.com/store/apps/details?id=comz.jzb.cube"><img src="images/google-play-badge.png" alt="Get it on Google Play"/></a>
+                    <a class="app-download" href="files/android/Cube_Dash_v1.0.1.apk">Download APK file</a>
+                </li>
+                <li>
+                    <img class="app-icon" src="images/zombie_overkill_3d.webp" alt="Zombie Overkill 3D" />
+                    <div class="app-name">Zombie Overkill 3D</div>
+                    <div class="app-description">
+                        Zombie Overkill is #1 realistic 3D action shooter game boasting spectacular graphics and blistering action sequences. Delve into 40+ challenging missions through cities and towns using a devastating arsenal of weapons including the iconic flamethrower against the walking dead. It’s time to bust your guts, kill zombies and wreak explosive havoc now!
+                    </div>
+                    <a class="app-google-play" href="https://play.google.com/store/apps/details?id=com.jzb.adventurer"><img src="images/google-play-badge.png" alt="Get it on Google Play"/></a>
+                    <a class="app-download" href="files/android/Zombie_Overkill_3D_v1.0.4.apk">Download APK file</a>
+                </li>
+                <li>
+                    <img class="app-icon" src="images/fishing_mania_3d.webp" alt="Fishing Mania 3D" />
+                    <div class="app-name">Fishing Mania 3D</div>
+                    <div class="app-description">
+                        Cast your line to hook and struggle with hundreds of unique species of fish in this #1 3D fishing simulation game Fishing Mania now!
+                    </div>
+                    <a class="app-google-play" href="https://play.google.com/store/apps/details?id=com.jzb.fishingmania"><img src="images/google-play-badge.png" alt="Get it on Google Play"/></a>
+                    <a class="app-download" href="files/android/Fishing_Mania_3D_v1.8.apk">Download APK file</a>
+                </li>
+                <li>
+                    <img class="app-icon" src="images/ace_launcher.webp" alt="Ace Launcher" />
+                    <div class="app-name">Ace Launcher</div>
+                    <div class="app-description">
+                        Ace Launcher is what you need on every Android device! It's the reason why you love your mobile devices. Download it for the super smooth and fast animation operation experience and Facebook bubble on desktop. We are making your device an entirely new personal assistant with easy controls, well-designed themes and more functions - waiting for you to explore!
+                    </div>
+                    <a class="app-google-play" href="https://play.google.com/store/apps/details?id=com.doodleapp.launcher"><img src="images/google-play-badge.png" alt="Get it on Google Play"/></a>
+                    <a class="app-download" href="files/android/Ace_Launcher_v1.0.6.apk">Download APK file</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div id="footer_wrap" class="outer">
+        <footer class="inner">
+            <dl>
+                <dt>Email</dt>
+                <dd>jiangzhongbo#gmail.com (#→@)</dd>
+                <dt>GitHub</dt>
+                <dd><a href="https://github.com/jiangzhongbo">github.com/jiangzhongbo</a></dd>
+            </dl>
+        </footer>
+    </div>
 </body>
-
 </html>
